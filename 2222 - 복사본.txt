@@ -1,0 +1,1 @@
+shift + insert 하면 복붙
