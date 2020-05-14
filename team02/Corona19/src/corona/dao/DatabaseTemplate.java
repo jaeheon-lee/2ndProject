@@ -7,6 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import corona.exception.DuplicateSSNException;
+<<<<<<< HEAD
+=======
+import corona.exception.RecordNotFoundException;
+>>>>>>> dae865ed23708d367500c3d04da5ee634002501f
 import corona.vo.Hospital;
 import corona.vo.Infectee;
 import corona.vo.Person;
@@ -21,7 +25,11 @@ public interface DatabaseTemplate {
 	
 	// 비지니스로직 ###################################################
 	/* =========================================== 추가 ============================================*/
+<<<<<<< HEAD
 	void addPeople(Person p) throws SQLException ;
+=======
+	void addPeople(Person p) throws SQLException, DuplicateSSNException;
+>>>>>>> dae865ed23708d367500c3d04da5ee634002501f
 	
 	/* =========================================== 조회 ==============================================*/
 	/* ----------------- 일반 유저 조회 -----------------------------*/

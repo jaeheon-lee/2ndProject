@@ -6,9 +6,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.DuplicateFormatFlagsException;
 
 import config.ServerInfo;
 import corona.exception.DuplicateSSNException;
+<<<<<<< HEAD
+=======
+import corona.exception.RecordNotFoundException;
+>>>>>>> dae865ed23708d367500c3d04da5ee634002501f
 import corona.vo.Hospital;
 import corona.vo.Infectee;
 import corona.vo.Person;
@@ -41,71 +46,96 @@ public class Database implements DatabaseTemplate {
 		closeAll(ps, conn);
 		if(rs!=null) rs.close();
 	}
-
+	
 	@Override
-	public void addPeople(Person p) throws SQLException {
+	public void addPeople(Person p) throws SQLException, DuplicateSSNException {
+		// 추가
 		Connection conn = getConnect();
-		String sql = "INSERT INTO person() VALUES()";
-		PreparedStatement ps = conn.prepareStatement(sql);
+		PreparedStatement ps = null;
+		String sql ="SELECT ssn FROM person WHERE ssn=?";
+		ps = conn.prepareStatement(sql);
+		ps.setInt(1, p.getSsn());
+		ResultSet rs = ps.executeQuery();
+		try {
+		if(!rs.next()) {
+			sql = "INSERT INTO person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, p.getSsn());
+			ps.setString(2, p.getName());
+			ps.setString(3, p.getAddress1());
+			ps.setString(4, p.getAddress2());
+			ps.setInt(5, p.getAge());
+			ps.setString(6, p.getGender());
+			ps.setString(7, p.getTest_condition());
+			ps.setString(8, p.getIsolation());
+			ps.setString(9, p.getCountry());
+			System.out.println(ps.executeUpdate() + "명 추가되었습니다.");
+		}
+		else {
+			throw new DuplicateSSNException();
+		}
+		}finally {
+			closeAll(rs, ps, conn);
+		}
 	}
 
 	@Override
 	public int todayInfectee() {
-		// TODO Auto-generated method stub
+		// 일일확진자수
 		return 0;
 	}
 
 	@Override
 	public int todayTreated() {
-		// TODO Auto-generated method stub
+		// 일일완치자수
 		return 0;
 	}
 
 	@Override
 	public int todayDeath() {
-		// TODO Auto-generated method stub
+		// 일일사망자
 		return 0;
 	}
 
 	@Override
 	public int totalInfectee() {
-		// TODO Auto-generated method stub
+		// 누적확진자
 		return 0;
 	}
 
 	@Override
 	public int totalTreated() {
-		// TODO Auto-generated method stub
+		// 누적완치자
 		return 0;
 	}
 
 	@Override
 	public int totalDeath() {
-		// TODO Auto-generated method stub
+		// 누적사망자
 		return 0;
 	}
 
 	@Override
 	public int totalDeathRate() {
-		// TODO Auto-generated method stub
+		// 누적사망률
 		return 0;
 	}
 
 	@Override
 	public int Treating() {
-		// TODO Auto-generated method stub
+		// 치료중인원수
 		return 0;
 	}
 
 	@Override
 	public int totalTest() {
-		// TODO Auto-generated method stub
+		// 누적검사수
 		return 0;
 	}
 
 	@Override
 	public int totalTestDone() {
-		// TODO Auto-generated method stub
+		// 누적검사완료수 : if(today()-검사일자 == 2day)
 		return 0;
 	}
 
