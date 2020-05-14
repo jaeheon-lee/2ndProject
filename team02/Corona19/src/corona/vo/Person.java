@@ -17,6 +17,100 @@ public class Person {
 	public Person() {
 		
 	}
+
+	public Person(int ssn, String name, String address1, String address2, int age, String gender, String test_condition,
+			String isolation, String country) {
+		super();
+		this.ssn = ssn;
+		this.name = name;
+		this.address1 = address1;
+		this.address2 = address2;
+		this.age = age;
+		this.gender = gender;
+		this.test_condition = test_condition;
+		this.isolation = isolation;
+		this.country = country;
+	}
+
+	public int getSsn() {
+		return ssn;
+	}
+
+	public void setSsn(int ssn) {
+		this.ssn = ssn;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress1() {
+		return address1;
+	}
+
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+
+	public String getAddress2() {
+		return address2;
+	}
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getTest_condition() {
+		return test_condition;
+	}
+
+	public void setTest_condition(String test_condition) {
+		this.test_condition = test_condition;
+	}
+
+	public String getIsolation() {
+		return isolation;
+	}
+
+	public void setIsolation(String isolation) {
+		this.isolation = isolation;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [ssn=" + ssn + ", name=" + name + ", address1=" + address1 + ", address2=" + address2 + ", age="
+				+ age + ", gender=" + gender + ", test_condition=" + test_condition + ", isolation=" + isolation
+				+ ", country=" + country + "]";
+	}
+	
 	
 
 	
