@@ -13,102 +13,98 @@ import corona.vo.Place;
 import corona.vo.Visit;
 
 public interface DatabaseTemplate {
-	// °øÅë ·ÎÁ÷ ###################################################
+	// ê³µí†µ ë¡œì§ ###################################################
 	Connection getConnect() throws SQLException;
 	void closeAll(PreparedStatement ps, Connection conn)throws SQLException;
 	void closeAll(ResultSet rs, PreparedStatement ps, Connection conn)throws SQLException;	
 	
-	
-	
-	
-	// ºñÁö´Ï½º·ÎÁ÷ ###################################################
-	/* =========================================== Ãß°¡ ============================================*/
+	// ë¹„ì§€ë‹ˆìŠ¤ë¡œì§ ###################################################
+	/* =========================================== ì¶”ê°€ ============================================*/
 	void addPeople(Person p) ;
 	
-	
-	/* =========================================== Á¶È¸ ==============================================*/
-	/* ----------------- ÀÏ¹İ À¯Àú Á¶È¸ -----------------------------*/
-	// ÀÏÀÏÈ®ÁøÀÚ¼ö
+	/* =========================================== ì¡°íšŒ ==============================================*/
+	/* ----------------- ì¼ë°˜ ìœ ì € ì¡°íšŒ -----------------------------*/
+	// ì¼ì¼í™•ì§„ììˆ˜
 	int todayInfectee();
-	// ÀÏÀÏ¿ÏÄ¡ÀÚ¼ö
+	// ì¼ì¼ì™„ì¹˜ììˆ˜
 	int todayTreated();
-	// ÀÏÀÏ»ç¸ÁÀÚ
+	// ì¼ì¼ì‚¬ë§ì
 	int todayDeath();
-	// ´©ÀûÈ®ÁøÀÚ
+	// ëˆ„ì í™•ì§„ì
 	int totalInfectee();
-	// ´©Àû¿ÏÄ¡ÀÚ
+	// ëˆ„ì ì™„ì¹˜ì
 	int totalTreated();
-	// ´©Àû»ç¸ÁÀÚ
+	// ëˆ„ì ì‚¬ë§ì
 	int totalDeath();
-	// ´©Àû»ç¸Á·ü
+	// ëˆ„ì ì‚¬ë§ë¥ 
 	int totalDeathRate();
-	// Ä¡·áÁßÀÎ¿ø¼ö
+	// ì¹˜ë£Œì¤‘ì¸ì›ìˆ˜
 	int Treating();
-	// ´©Àû°Ë»ç¼ö
+	// ëˆ„ì ê²€ì‚¬ìˆ˜
 	int totalTest();
-	// ´©Àû°Ë»ç¿Ï·á¼ö : if(today()-°Ë»çÀÏÀÚ == 2day)
+	// ëˆ„ì ê²€ì‚¬ì™„ë£Œìˆ˜ : if(today()-ê²€ì‚¬ì¼ì == 2day)
 	int totalTestDone();
-	// ´©ÀûÈ®Áø·ü : ´©ÀûÈ®Áø¼ö/´©Àû°Ë»ç¼ö * 100
+	// ëˆ„ì í™•ì§„ë¥  : ëˆ„ì í™•ì§„ìˆ˜/ëˆ„ì ê²€ì‚¬ìˆ˜ * 100
 	int totalInfecteeRate();
-	// Áö¿ª¹ß»ıÈ®ÁøÀÚ  where country = ´ëÇÑ¹Î±¹ and È®Áø
+	// ì§€ì—­ë°œìƒí™•ì§„ì  where country = ëŒ€í•œë¯¼êµ­ and í™•ì§„
 	int localInfectee();
-	// ÇØ¿Ü¹ß»ıÈ®ÁøÀÚ¼ö
+	// í•´ì™¸ë°œìƒí™•ì§„ììˆ˜
 	int foreignInfectee();
-	// ½Ãµµº°È®ÁøÀÚ : address1 and 2
+	// ì‹œë„ë³„í™•ì§„ì : address1 and 2
 	int infecteeInCertainCity(String address1);
 	int infecteeInCertainCity(String address1, String address2);
-	// Æ¯Á¤Áö¿ªÈ®ÁøÀÚ or Æ¯Á¤È¯ÀÚ µ¿¼± °Ë»ö
-	ArrayList<Visit> searchAllTrace(String address1, String address2, int num); // Æ¯Á¤ È¯ÀÚ 
-	ArrayList<Visit> searchAllTrace(String address1, String address2); // Æ¯Á¤Áö¿ªÈ¯ÀÚ
-	// ¹æ¿ªÀÌ ÇÊ¿äÇÑ Àå¼Ò Áß¿¡ ¹æ¿ª¿©ºÎÁ¶È¸
-	ArrayList<Visit> isCleaned(); // ¸ğµç ¹æ¿ª ³»¿ª
-	ArrayList<Visit> isCleaned(int ssn); // Æ¯Á¤ È®ÁøÀÚ°¡ °£ °÷ 
+	// íŠ¹ì •ì§€ì—­í™•ì§„ì or íŠ¹ì •í™˜ì ë™ì„  ê²€ìƒ‰
+	ArrayList<Visit> searchAllTrace(String address1, String address2, int num); // íŠ¹ì • í™˜ì 
+	ArrayList<Visit> searchAllTrace(String address1, String address2); // íŠ¹ì •ì§€ì—­í™˜ì
+	// ë°©ì—­ì´ í•„ìš”í•œ ì¥ì†Œ ì¤‘ì— ë°©ì—­ì—¬ë¶€ì¡°íšŒ
+	ArrayList<Visit> isCleaned(); // ëª¨ë“  ë°©ì—­ ë‚´ì—­
+	ArrayList<Visit> isCleaned(int ssn); // íŠ¹ì • í™•ì§„ìê°€ ê°„ ê³³ 
 	
 	
-	/* ---------------- Á÷¿ø °íÀ¯ Á¶È¸ -----------------------------------*/
+	/* ---------------- ì§ì› ê³ ìœ  ì¡°íšŒ -----------------------------------*/
 	
-	// ÀÏ¹İ Á¶È¸
+	// ì¼ë°˜ ì¡°íšŒ
 	Person searchPeople(int ssn);
-	// ±¹Àû Á¶È¸
+	// êµ­ì  ì¡°íšŒ
 	String searchForeigner(int ssn);
-	// Æ¯Á¤È®ÁøÀÚ Á¶È¸
+	// íŠ¹ì •í™•ì§„ì ì¡°íšŒ
 	Person searchAInfectee(String address1, String address2, int num);
 	Person searchAInfectee(int ssn);//
-	// ÀüÃ¼È®ÁøÀÚ
+	// ì „ì²´í™•ì§„ì
 	ArrayList<Person> searchAllInfectee();
-	// ÇØ¿Ü¹ß»ıÈ®ÁøÀÚ where country = ?
+	// í•´ì™¸ë°œìƒí™•ì§„ì where country = ?
 	ArrayList<Person> searchAllForeignInfectee();
-	// µ¿¼± Á¶È¸
+	// ë™ì„  ì¡°íšŒ
 	ArrayList<Place> searchAllTrace(int ssn);
 	
-	// º´¿ø ÄÚµå Á¶È¸
+	// ë³‘ì› ì½”ë“œ ì¡°íšŒ
 	int searchAHosipitalCode(String name);
-	// º´¿ø º° È®ÁøÀÚ Á¶È¸
-	Hospital whereIsAInfectee(Infectee infectee); // Æ¯Á¤ È¯ÀÚ°¡ ÀÔ¿øÇÑ º´¿ø
-    ArrayList<Person> searchAllInfecteeInHospital(); // ÇÑ º´¿øÀÇ ¸ğµç È¯ÀÚ
-    // n¹ø È¯ÀÚ°¡ °¨¿°½ÃÅ² »ç¶÷µéÀ» Á¶È¸
+	// ë³‘ì› ë³„ í™•ì§„ì ì¡°íšŒ
+	Hospital whereIsAInfectee(Infectee infectee); // íŠ¹ì • í™˜ìê°€ ì…ì›í•œ ë³‘ì›
+    ArrayList<Person> searchAllInfecteeInHospital(); // í•œ ë³‘ì›ì˜ ëª¨ë“  í™˜ì
+    // në²ˆ í™˜ìê°€ ê°ì—¼ì‹œí‚¨ ì‚¬ëŒë“¤ì„ ì¡°íšŒ
     ArrayList<Person> searchInfectedPeopleByCertainPerson(Person p);
     
-    // ¹æ¿ª¿©ºÎ Á¶È¸
-    ArrayList<Visit> isCleaned(String address); // Æ¯Á¤ È®ÁøÀÚ°¡ °£ °÷ 
+    // ë°©ì—­ì—¬ë¶€ ì¡°íšŒ
+    ArrayList<Visit> isCleaned(String address); // íŠ¹ì • í™•ì§„ìê°€ ê°„ ê³³ 
     
-	// =============== ÇöÈ²¾÷µ¥ÀÌÆ® =================
-    // ÀÏ¹İÁ¤º¸¼öÁ¤
+	// =============== í˜„í™©ì—…ë°ì´íŠ¸ =================
+    // ì¼ë°˜ì •ë³´ìˆ˜ì •
     void updatePerson(Person p);
-    // È®ÁøÀÚ Ãß°¡ + ÀÔ¿ø Ã³¸® + ¹æ¿ªµµ : ÀÔ¿ø³¯Â¥ ³Ö±â 
-    void addInfectee(Infectee inf); // corona19¸¦ 1·Î infectee »ı¼º
-	// ¿ÏÄ¡ 
+    // í™•ì§„ì ì¶”ê°€ + ì…ì› ì²˜ë¦¬ + ë°©ì—­ë„ : ì…ì›ë‚ ì§œ ë„£ê¸° 
+    void addInfectee(Infectee inf); // corona19ë¥¼ 1ë¡œ infectee ìƒì„±
+	// ì™„ì¹˜ 
     void treatedInfectee(int ssn);
-    // °İ¸®ÇØÁ¦
+    // ê²©ë¦¬í•´ì œ
     void NoMoreIsolation(int ssn);
-    // »ç¸Á
+    // ì‚¬ë§
     void setDeath(int ssn);
-    // µ¿¼±
+    // ë™ì„ 
     void updateTrace(int ssn);
-    // =============== ÈÄ¼ÓÁ¶Ä¡ =============================
-    // ¹æ¿ªÇÏ±â : visit, place clean ¸ğµç ¹Ù²ÙµÇ Æ®·£Àè¼Ç Àû¿ë
+    // =============== í›„ì†ì¡°ì¹˜ =============================
+    // ë°©ì—­í•˜ê¸° : visit, place clean ëª¨ë“  ë°”ê¾¸ë˜ íŠ¸ëœì­ì…˜ ì ìš©
     void doClean(int ssn, String address);
     
-    // ssn º¯È¯
+    // ssn ë³€í™˜
     int returnSsn(String address1, String address2, int num);
 }

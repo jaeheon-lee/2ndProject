@@ -1,18 +1,16 @@
 package corona.vo;
 
-import java.util.ArrayList;
-
 public class Person {
 	private int ssn; 
 	private String name;
-	private String address1; // µµ, ±¤¿ª ´ÜÀ§ ÁÖ¼Ò
-	private String address2; // ½Ã, ±¸±º ´ÜÀ§ ÁÖ¼Ò
+	private String address1; // ë„, ê´‘ì—­ ë‹¨ìœ„ ì£¼ì†Œ
+	private String address2; // ì‹œ, êµ¬êµ° ë‹¨ìœ„ ì£¼ì†Œ
 	private int age;
 	private String gender;
 	
-	private String test_condition; // °Ë»ç¹ŞÀº ³¯Â¥
-	private String isolation; // ÀÚ°¡°İ¸® ½ÃÀÛ ³¯Â¥
-	private String country; // ±¹Àû
+	private String test_condition; // ê²€ì‚¬ë°›ì€ ë‚ ì§œ
+	private String isolation; // ìê°€ê²©ë¦¬ ì‹œì‘ ë‚ ì§œ
+	private String country; // êµ­ì 
 	
 	public Person() {
 		

@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Infectee extends Person {
 	private int num;
-	private String infectionRoute; // °¨¿°°æ·Î : ÇØ¿Ü³Ä, Áö¿ª
-	private int infecter; // ³¯ °¨¿°½ÃÅ² »ç¶÷
-	private String in_hospital; // ÀÔ¿ø ³¯Â¥
-	private String treatDate; // ¿ÏÄ¡ ³¯Â¥
-	private String deathDate; // »ç¸Á ³¯Â¥
-	private ArrayList<Place> allTrace;  // µ¿¼± ²®µ¥±â
+	private String infectionRoute; // ê°ì—¼ê²½ë¡œ : í•´ì™¸ëƒ, ì§€ì—­
+	private int infecter; // ë‚  ê°ì—¼ì‹œí‚¨ ì‚¬ëŒ
+	private String in_hospital; // ì…ì› ë‚ ì§œ
+	private String treatDate; // ì™„ì¹˜ ë‚ ì§œ
+	private String deathDate; // ì‚¬ë§ ë‚ ì§œ
+	private ArrayList<Place> allTrace;  // ë™ì„  ê»ë°ê¸°
 	
 	
 	public Infectee() {
