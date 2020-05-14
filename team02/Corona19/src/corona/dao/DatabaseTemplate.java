@@ -1,4 +1,4 @@
-package corona.server;
+package corona.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -44,6 +44,7 @@ public interface DatabaseTemplate {
 	int totalTest();
 	// 누적검사완료수 : if(today()-검사일자 == 2day)
 	int totalTestDone();
+	//==================================================
 	// 누적확진률 : 누적확진수/누적검사수 * 100
 	int totalInfecteeRate();
 	// 지역발생확진자  where country = 대한민국 and 확진
