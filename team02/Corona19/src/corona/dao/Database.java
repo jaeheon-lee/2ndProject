@@ -229,7 +229,11 @@ public class Database implements DatabaseTemplate {
 
 	@Override
 	public ArrayList<Visit> isCleaned(String address) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
 		
+		conn = getConnect();
 		return null;
 	}
 

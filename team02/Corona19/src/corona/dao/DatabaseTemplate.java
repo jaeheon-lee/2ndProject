@@ -108,4 +108,6 @@ public interface DatabaseTemplate {
     
     // ssn 변환
     int returnSsn(String address1, String address2, int num);
+    // 동선 모음 불러오기
+    ArrayList<Visit> getTrace(int ssn);
 }
