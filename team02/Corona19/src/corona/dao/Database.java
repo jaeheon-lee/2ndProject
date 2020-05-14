@@ -22,21 +22,27 @@ public class Database implements DatabaseTemplate {
 	
 	@Override
 	public Connection getConnect() throws SQLException {
+<<<<<<< HEAD
 		Connection conn =DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+=======
+		Connection conn = null;
+		conn = DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+>>>>>>> ee63c4ceab71187bcdc1f046531bd5cf989fbf4f
 		System.out.println("Database Connection......");
 		return conn;
 	}
 
 	@Override
 	public void closeAll(PreparedStatement ps, Connection conn) throws SQLException {
-		// TODO Auto-generated method stub
+		if(ps!=null) ps.close();
+		if(conn!=null) conn.close();
 		
 	}
 
 	@Override
 	public void closeAll(ResultSet rs, PreparedStatement ps, Connection conn) throws SQLException {
-		// TODO Auto-generated method stub
-		
+		closeAll(ps, conn);
+		if(rs!=null) rs.close();
 	}
 
 	@Override
@@ -185,13 +191,13 @@ public class Database implements DatabaseTemplate {
 	}
 
 	@Override
-	public ArrayList<Person> searchAllInfectee() {
+	public ArrayList<Infectee> searchAllInfectee() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList<Person> searchAllForeignInfectee() {
+	public ArrayList<Infectee> searchAllForeignInfectee() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -215,20 +221,30 @@ public class Database implements DatabaseTemplate {
 	}
 
 	@Override
-	public ArrayList<Person> searchAllInfecteeInHospital() {
+	public ArrayList<Infectee> searchAllInfecteeInHospital() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList<Person> searchInfectedPeopleByCertainPerson(Person p) {
+	public ArrayList<Infectee> searchInfectedPeopleByCertainPerson(Person p) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList<Visit> isCleaned(String address) {
-		// TODO Auto-generated method stub
+	public ArrayList<Visit> isCleaned(String address) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+		conn = getConnect();
+		String query = "SELECT ";
+		return null;
+		}catch(SQLException e) {
+			System.out.println();
+		}
 		return null;
 	}
 
@@ -278,6 +294,12 @@ public class Database implements DatabaseTemplate {
 	public int returnSsn(String address1, String address2, int num) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public ArrayList<Visit> getTrace(int ssn) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
