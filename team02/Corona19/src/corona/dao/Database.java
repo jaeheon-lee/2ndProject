@@ -1,6 +1,7 @@
 package corona.dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,13 +17,14 @@ import corona.vo.Visit;
 public class Database implements DatabaseTemplate {
 	public Database(String serverIp) throws ClassNotFoundException {
 		Class.forName(ServerInfo.DRIVER_NAME);
-		System.out.println("드라이버 로딩 성공");
+		System.out.println("Drive Loading Success..");
 	}
 	
 	@Override
 	public Connection getConnect() throws SQLException {
-		
-		return null;
+		Connection conn =DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+		System.out.println("Database Connection......");
+		return conn;
 	}
 
 	@Override
@@ -38,9 +40,10 @@ public class Database implements DatabaseTemplate {
 	}
 
 	@Override
-	public void addPeople(Person p) {
-		// TODO Auto-generated method stub
-		
+	public void addPeople(Person p) throws SQLException {
+		Connection conn = getConnect();
+		String sql = "INSERT INTO person() VALUES()";
+		PreparedStatement ps = conn.prepareStatement(sql);
 	}
 
 	@Override
