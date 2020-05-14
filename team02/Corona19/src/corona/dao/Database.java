@@ -16,7 +16,7 @@ import corona.vo.Visit;
 public class Database implements DatabaseTemplate {
 	public Database(String serverIp) throws ClassNotFoundException {
 		Class.forName(ServerInfo.DRIVER_NAME);
-		
+		"이재헌입니다."
 	}
 	
 	@Override
