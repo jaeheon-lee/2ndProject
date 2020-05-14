@@ -1,64 +1,18 @@
 package corona.vo;
 
-public class Infectee {
-	private int ssn;
+import java.util.ArrayList;
+
+public class Infectee extends Person {
 	private int num;
-	private String infectionRoute;
-	private String in_hospital;
-	private int infecter;
+	private String infectionRoute; // 감염경로 : 해외냐, 지역
+	private String in_hospital; // 입원 날짜
+	private int infecter; // 날 감염시킨 사람
+	private int condition; // 사망여부? 치료 중=0, 완치 = 1, 사망 = 2
+	private ArrayList<Place> allTrace;  // 동선 껍데기
+	
 	
 	public Infectee() {
 		
 	}
-
-	public Infectee(int ssn, int num, String infectionRoute, String in_hospital) {
-		super();
-		this.ssn = ssn;
-		this.num = num;
-		this.in_hospital = in_hospital;
-	}
-
-	public int getSsn() {
-		return ssn;
-	}
-
-	public void setSsn(int ssn) {
-		this.ssn = ssn;
-	}
-
-	public int getNum() {
-		return num;
-	}
-
-	public void setNum(int num) {
-		this.num = num;
-	}
-
-	public String getIn_hospital() {
-		return in_hospital;
-	}
-
-	public void setIn_hospital(String in_hospital) {
-		this.in_hospital = in_hospital;
-	}
-
-	public String getInfectionRoute() {
-		return infectionRoute;
-	}
-
-	public void setInfectionRoute(String infectionRoute) {
-		this.infectionRoute = infectionRoute;
-	}
-
-	@Override
-	public String toString() {
-		return "Infectee [ssn=" + ssn + ", num=" + num + ", infectionRoute=" + infectionRoute + ", in_hospital="
-				+ in_hospital + "]";
-	}
-
-
-	
-	
-
 	
 }

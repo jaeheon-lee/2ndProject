@@ -40,6 +40,10 @@ public interface DatabaseTemplate {
     void NoMoreIsolation(int ssn);
     
     // =============== 후속조치 =============================
+    // 방역하기
+    
+    // 입원 처리
+    
     
     
 }
