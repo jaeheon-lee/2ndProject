@@ -10,10 +10,7 @@ import java.util.DuplicateFormatFlagsException;
 
 import config.ServerInfo;
 import corona.exception.DuplicateSSNException;
-<<<<<<< HEAD
-=======
 import corona.exception.RecordNotFoundException;
->>>>>>> dae865ed23708d367500c3d04da5ee634002501f
 import corona.vo.Hospital;
 import corona.vo.Infectee;
 import corona.vo.Person;
@@ -303,7 +300,7 @@ public class Database implements DatabaseTemplate {
 	}	
 
 	@Override
-	public void addInfectee(int ssn, int code) throws SQLException, DuplicateSSNException {
+	public void addInfectee(int ssn, int code, String infectionroute) throws SQLException, DuplicateSSNException {
 		Connection conn = null;
 		PreparedStatement ps =null;
 		
@@ -311,11 +308,12 @@ public class Database implements DatabaseTemplate {
 			conn = getConnect();
 			
 			if(!isExistinInfectee(ssn, conn)) {
-				String query = "INSERT INTO infectee(Person_ssn, in_hospital, Hospital_code) VALUES(?, curdate(), ?)";
+				String query = "INSERT INTO infectee(Person_ssn, in_hospital, Hospital_code, InfectionRoute) VALUES(?, curdate(), ?, ?)";
 				ps = conn.prepareStatement(query);
 				
 				ps.setInt(1, ssn);
 				ps.setInt(2, code);
+				ps.setString(3, infectionroute);
 				
 				System.out.println(ps.executeUpdate()+" 명 추가 ok...");
 			}else {

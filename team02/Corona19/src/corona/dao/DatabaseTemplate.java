@@ -7,10 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import corona.exception.DuplicateSSNException;
-<<<<<<< HEAD
-=======
 import corona.exception.RecordNotFoundException;
->>>>>>> dae865ed23708d367500c3d04da5ee634002501f
 import corona.vo.Hospital;
 import corona.vo.Infectee;
 import corona.vo.Person;
@@ -25,11 +22,7 @@ public interface DatabaseTemplate {
 	
 	// 비지니스로직 ###################################################
 	/* =========================================== 추가 ============================================*/
-<<<<<<< HEAD
-	void addPeople(Person p) throws SQLException ;
-=======
-	void addPeople(Person p) throws SQLException, DuplicateSSNException;
->>>>>>> dae865ed23708d367500c3d04da5ee634002501f
+	void addPeople(Person p) throws SQLException, DuplicateSSNException ;
 	
 	/* =========================================== 조회 ==============================================*/
 	/* ----------------- 일반 유저 조회 -----------------------------*/
@@ -102,7 +95,7 @@ public interface DatabaseTemplate {
     // 일반정보수정
     void updatePerson(Person p);
     // 확진자 추가 + 입원 처리 + 방역도 : 입원날짜 넣기 
-    void addInfectee(int ssn, int code) throws SQLException, DuplicateSSNException; // corona19를 1로 infectee 생성
+    void addInfectee(int ssn, int code, String infectionroute) throws SQLException, DuplicateSSNException; // corona19를 1로 infectee 생성
 	// 완치 
     void treatedInfectee(int ssn);
     // 격리해제
