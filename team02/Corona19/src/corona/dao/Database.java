@@ -1,6 +1,7 @@
 package corona.dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,20 +22,23 @@ public class Database implements DatabaseTemplate {
 	
 	@Override
 	public Connection getConnect() throws SQLException {
-		
-		return null;
+		Connection conn = null;
+		conn = DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+		System.out.println("Database Connection......");
+		return conn;
 	}
 
 	@Override
 	public void closeAll(PreparedStatement ps, Connection conn) throws SQLException {
-		// TODO Auto-generated method stub
+		if(ps!=null) ps.close();
+		if(conn!=null) conn.close();
 		
 	}
 
 	@Override
 	public void closeAll(ResultSet rs, PreparedStatement ps, Connection conn) throws SQLException {
-		// TODO Auto-generated method stub
-		
+		closeAll(ps, conn);
+		if(rs!=null) rs.close();
 	}
 
 	@Override
@@ -225,7 +229,7 @@ public class Database implements DatabaseTemplate {
 
 	@Override
 	public ArrayList<Visit> isCleaned(String address) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
