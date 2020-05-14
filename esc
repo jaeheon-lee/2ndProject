@@ -1,0 +1,155 @@
+[33mcommit c9a527f2e40419779c9a56efa1e92aa592451024[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: de05d57 6f2cbd5
+Author: 10yeony <10yeony@gmail.com>
+Date:   Thu May 14 13:24:04 2020 +0900
+
+    Merge branch 'master' of https://github.com/jaeheon-lee/2ndProject
+
+[33mcommit de05d57414b07d383ada1a494feffab665e77721[m
+Author: 10yeony <10yeony@gmail.com>
+Date:   Thu May 14 13:23:56 2020 +0900
+
+    Update Database.java
+
+[33mcommit 6f2cbd50f79c76115cb03e0f7c09d0447ae0ac87[m
+Merge: 91c6e0f 4840835
+Author: LEEJAEHEON <ggapdol2@gmail.com>
+Date:   Thu May 14 13:23:29 2020 +0900
+
+    dbModelling
+
+[33mcommit 91c6e0fbfb23aa93b43c96c789116a14d8ac6ebd[m
+Author: LEEJAEHEON <ggapdol2@gmail.com>
+Date:   Thu May 14 13:22:28 2020 +0900
+
+    DBmodeling
+
+[33mcommit 4840835fe3776c2b02e713f6d4ed7e6de6060a0d[m
+Author: 10yeony <10yeony@gmail.com>
+Date:   Thu May 14 12:47:18 2020 +0900
+
+    Add Serverinfo.java
+
+[33mcommit 8bfe043a423f0344caa347188bd7fbe5954348ad[m
+Author: 10yeony <10yeony@gmail.com>
+Date:   Thu May 14 12:40:45 2020 +0900
+
+    Making Class Database
+
+[33mcommit 80ffe8f63e0d53bf6e5abe57f166798dc5a4d910[m
+Merge: 068a61d 9f43f38
+Author: LEEJAEHEON <ggapdol2@gmail.com>
+Date:   Thu May 14 12:30:23 2020 +0900
+
+    dao&vo&exception&DBmodelling_Merge branch 'master' of https://github.com/jaeheon-lee/2ndProject
+
+[33mcommit 9f43f389624de4245ad0d84ad750ba4ad077bf19[m
+Author: 강제영 <wpdud001@gmail.com>
+Date:   Thu May 14 12:14:08 2020 +0900
+
+    DAO & VO & Exception ver1
+
+[33mcommit 09caf5152994793da6d193562b69b3f7fd2247f1[m
+Author: 강제영 <wpdud001@gmail.com>
+Date:   Thu May 14 12:09:12 2020 +0900
+
+    DAO & VO ver3
+
+[33mcommit dfce3589aa317dd6ae0db127e55bd8ceb9eef3af[m
+Author: 강제영 <wpdud001@gmail.com>
+Date:   Thu May 14 10:36:48 2020 +0900
+
+    DAO & VO ver.2
+
+[33mcommit 068a61d41c69eb52bcfbb954feca5fd7d6e9d08f[m
+Merge: c361ffc 3a40b7f
+Author: LEEJAEHEON <ggapdol2@gmail.com>
+Date:   Thu May 14 09:04:54 2020 +0900
+
+    version 1_Merge branch 'master' of https://github.com/jaeheon-lee/2ndProject
+
+[33mcommit 3a40b7f41a002c8d5fc5c69272030bcfc1fbb0c2[m
+Author: 강제영 <wpdud001@gmail.com>
+Date:   Wed May 13 17:54:43 2020 +0900
+
+    VO and DAO version 1
+
+[33mcommit 27d69be41daf79ad639f51e192ea21bde26d96ce[m
+Author: 10yeony <10yeony@gmail.com>
+Date:   Wed May 13 16:26:58 2020 +0900
+
+    Modeling ver 2
+
+[33mcommit 12890bc89a63d6e39dbf11293547d78401c52ebf[m
+Merge: a84c04b f30418c
+Author: 10yeony <10yeony@gmail.com>
+Date:   Wed May 13 16:00:48 2020 +0900
+
+    Merge branch 'master' of https://github.com/jaeheon-lee/2ndProject
+
+[33mcommit f30418c188e51ce9335078b21367b12b7ea13fbe[m
+Author: 10yeony <54801793+10yeony@users.noreply.github.com>
+Date:   Wed May 13 15:59:20 2020 +0900
+
+    Delete 2222.txt
+
+[33mcommit bd1d3429612e43863cf4c519da44b03fdbd4e331[m
+Author: 10yeony <54801793+10yeony@users.noreply.github.com>
+Date:   Wed May 13 15:59:11 2020 +0900
+
+    Delete 2222 - 복사본.txt
+
+[33mcommit 9c7c25e56a669b4ade247fce4dbb4e84a41771c2[m
+Author: 10yeony <54801793+10yeony@users.noreply.github.com>
+Date:   Wed May 13 15:59:01 2020 +0900
+
+    Delete 1.txt
+
+[33mcommit a84c04b238fbef0f519c1252412d2e6b76d2569a[m
+Merge: e5353f2 42d4e1e
+Author: 10yeony <10yeony@gmail.com>
+Date:   Wed May 13 15:56:56 2020 +0900
+
+    Merge branch 'master' of https://github.com/jaeheon-lee/2ndProject
+
+[33mcommit e5353f200b4655e2af58feb4d0300550e58a3a2c[m
+Author: 10yeony <10yeony@gmail.com>
+Date:   Wed May 13 15:55:38 2020 +0900
+
+    Modeling ver.1
+
+[33mcommit c361ffc411a4e692b77c420446edad55dee9a133[m
+Author: LEEJAEHEON <ggapdol2@gmail.com>
+Date:   Wed May 13 14:49:10 2020 +0900
+
+    test
+
+[33mcommit 42d4e1ec33b546bbfd38261adaf88c0425095f16[m
+Author: 강제영 <wpdud001@gmail.com>
+Date:   Wed May 13 14:38:35 2020 +0900
+
+    test
+
+[33mcommit ac93beda241c9a4fda15813facc52cfb0c52b355[m
+Author: 10yeony <10yeony@gmail.com>
+Date:   Wed May 13 14:31:23 2020 +0900
+
+    test
+
+[33mcommit 0c024951e2de0a9c3ed77f02bade9455d34d7c3e[m
+Author: diana-kim <diana.yeony.kim@gmail.com>
+Date:   Wed May 13 14:00:45 2020 +0900
+
+    test
+
+[33mcommit 6b1b9206fb9b3241080654d203da43267e813685[m
+Author: LEEJAEHEON <ggapdol2@gmail.com>
+Date:   Wed May 13 13:21:35 2020 +0900
+
+    BraninStorming
+
+[33mcommit 4d90b0551b9d590d155b917f3cb17967ee5dcd6a[m
+Author: LEEJAEHEON <ggapdol2@gmail.com>
+Date:   Wed May 13 13:16:52 2020 +0900
+
+    README.md
