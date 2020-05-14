@@ -186,13 +186,13 @@ public class Database implements DatabaseTemplate {
 	}
 
 	@Override
-	public ArrayList<Person> searchAllInfectee() {
+	public ArrayList<Infectee> searchAllInfectee() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList<Person> searchAllForeignInfectee() {
+	public ArrayList<Infectee> searchAllForeignInfectee() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -216,24 +216,30 @@ public class Database implements DatabaseTemplate {
 	}
 
 	@Override
-	public ArrayList<Person> searchAllInfecteeInHospital() {
+	public ArrayList<Infectee> searchAllInfecteeInHospital() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList<Person> searchInfectedPeopleByCertainPerson(Person p) {
+	public ArrayList<Infectee> searchInfectedPeopleByCertainPerson(Person p) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList<Visit> isCleaned(String address) {
+	public ArrayList<Visit> isCleaned(String address) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		
+		try {
 		conn = getConnect();
+		String query = "SELECT ";
+		return null;
+		}catch(SQLException e) {
+			System.out.println();
+		}
 		return null;
 	}
 
@@ -283,6 +289,12 @@ public class Database implements DatabaseTemplate {
 	public int returnSsn(String address1, String address2, int num) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public ArrayList<Visit> getTrace(int ssn) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

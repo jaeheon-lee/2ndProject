@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Infectee extends Person {
 	private int num;
 	private String infectionRoute; // 감염경로 : 해외냐, 지역
-	private int infecter; // 날 감염시킨 사람
+	
 	private String in_hospital; // 입원 날짜
 	private String treatDate; // 완치 날짜
 	private String deathDate; // 사망 날짜
@@ -17,13 +17,12 @@ public class Infectee extends Person {
 	}
 
 
-	public Infectee(int ssn, String name, String address1, String address2, int age, String gender, String test_condition,
-			String isolation, String country, int num, String infectionRoute, int infecter, String in_hospital, String treatDate,
+	public Infectee(int ssn, String name, String address1, String address2, int age, String gender, int infecter, String test_condition,
+			String isolation, String country, int num, String infectionRoute, String in_hospital, String treatDate,
 			String deathDate, ArrayList<Place> allTrace) {
-		super(ssn, name, address1, address2, age, gender, test_condition, isolation, country);
+		super(ssn, name, address1, address2, age, gender, infecter, test_condition, isolation, country);
 		this.num = num;
 		this.infectionRoute = infectionRoute;
-		this.infecter = infecter;
 		this.in_hospital = in_hospital;
 		this.treatDate = treatDate;
 		this.deathDate = deathDate;
@@ -48,17 +47,6 @@ public class Infectee extends Person {
 	public void setInfectionRoute(String infectionRoute) {
 		this.infectionRoute = infectionRoute;
 	}
-
-
-	public int getInfecter() {
-		return infecter;
-	}
-
-
-	public void setInfecter(int infecter) {
-		this.infecter = infecter;
-	}
-
 
 	public String getIn_hospital() {
 		return in_hospital;
@@ -102,8 +90,10 @@ public class Infectee extends Person {
 
 	@Override
 	public String toString() {
-		return "Infectee [num=" + num + ", infectionRoute=" + infectionRoute + ", infecter=" + infecter
-				+ ", in_hospital=" + in_hospital + ", treatDate=" + treatDate + ", deathDate=" + deathDate
-				+ ", allTrace=" + allTrace + "]";
+		return "Infectee [num=" + num + ", infectionRoute=" + infectionRoute + ", in_hospital=" + in_hospital
+				+ ", treatDate=" + treatDate + ", deathDate=" + deathDate + ", allTrace=" + allTrace + "]";
 	}
+
+
+	
 }
