@@ -26,4 +26,5 @@ INSERT INTO place(address, name) VALUES('888번지', '백화점');
 INSERT INTO place(address, name) VALUES('999번지', '차량정비소');
 INSERT INTO place(address, name) VALUES('1010번지', '주유소');
 
+SELECT * FROM hospital;
 SELECT * FROM place;
