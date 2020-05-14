@@ -16,9 +16,7 @@ import corona.vo.Visit;
 public class Database implements DatabaseTemplate {
 	public Database(String serverIp) throws ClassNotFoundException {
 		Class.forName(ServerInfo.DRIVER_NAME);
-
-//test
-
+		System.out.println("드라이버 로딩 성공");
 	}
 	
 	@Override
