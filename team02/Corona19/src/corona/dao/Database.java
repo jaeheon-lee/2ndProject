@@ -22,12 +22,8 @@ public class Database implements DatabaseTemplate {
 	
 	@Override
 	public Connection getConnect() throws SQLException {
-<<<<<<< HEAD
-		Connection conn =DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
-=======
 		Connection conn = null;
 		conn = DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
->>>>>>> ee63c4ceab71187bcdc1f046531bd5cf989fbf4f
 		System.out.println("Database Connection......");
 		return conn;
 	}

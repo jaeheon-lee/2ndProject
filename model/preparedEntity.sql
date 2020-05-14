@@ -2,39 +2,39 @@ USE corona19;
 
 -- Person 엔터티 추가
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(111, '김00', '서울', '서초구', 30, 'w', '2020-05-10', '2020-05-11', "대한민국");
+VALUES(111, '김00', '서울', '서초구', 30, 'w', '2020-05-10', '2020-05-10', "대한민국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(222, '이00', '서울', '강남구', 28, 'm', '2020-05-10', '2020-05-11', "대한민국");
+VALUES(222, '이00', '서울', '강남구', 28, 'm', '2020-04-07', '2020-04-08', "대한민국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(333, '박00', '서울', '서초구', 80, 'm', '2020-05-10', '2020-05-11', "미국");
+VALUES(333, '박00', '서울', '서초구', 80, 'm', '2020-03-10', '2020-03-10', "미국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(444, '최00', '경기도', '시흥시', 47, 'w', '2020-05-10', '2020-05-11', "미국");
+VALUES(444, '최00', '경기도', '시흥시', 47, 'w', '2020-04-22', '2020-04-22', "미국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
 VALUES(555, '한00', '경기도', '부천시', 16, 'm', '2020-05-10', '2020-05-11', "대한민국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(666, '진00', '인천', '부평구', 59, 'm', '2020-05-10', '2020-05-11', "대한민국");
+VALUES(666, '진00', '인천', '부평구', 59, 'm', '2020-05-05', '2020-05-05', "대한민국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(777, '유00', '인천', '계양구', 22, 'm', '2020-05-10', '2020-05-11', "독일");
+VALUES(777, '유00', '인천', '계양구', 22, 'm', '2020-02-10', '2020-02-10', "독일");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(888, '강00', '울산', '중구', 21, 'w', '2020-05-10', '2020-05-11', "대한민국");
+VALUES(888, '강00', '울산', '중구', 21, 'w', '2020-01-29', '2020-01-29', "대한민국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(999, '전00', '울산', '울주군', 47, 'w', '2020-05-10', '2020-05-11', "대한민국");
+VALUES(999, '전00', '울산', '울주군', 47, 'w', '2020-02-22', '2020-02-23', "대한민국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(1010, '김00', '부산', '연제구', 33, 'm', '2020-05-10', '2020-05-11', "캐나다");
+VALUES(1010, '김00', '부산', '연제구', 33, 'm', '2020-03-30', '2020-03-31', "캐나다");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(1111, '피00', '대구', '수성구', 28, 'w', '2020-05-10', '2020-05-11', "대한민국");
+VALUES(1111, '피00', '대구', '수성구', 28, 'w', '2020-04-02', '2020-04-02', "대한민국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(1212, '방00', '대전', '중구', 25, 'm', '2020-05-10', '2020-05-11', "대한민국");
+VALUES(1212, '방00', '대전', '중구', 25, 'm', '2020-05-14', '2020-05-15', "대한민국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(1313, '나00', '강원도', '원주시', 77, 'm', '2020-05-10', '2020-05-11', "싱가폴");
+VALUES(1313, '나00', '강원도', '원주시', 77, 'm', '2020-05-14', '2020-05-14', "싱가폴");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(1414, '기00', '경상남도', '마산시', 96, 'w', '2020-05-10', '2020-05-11', "대한민국");
+VALUES(1414, '기00', '경상남도', '마산시', 96, 'w', '2020-05-18', '2020-05-19', "대한민국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(1515, '라00', '경상북도', '영주시', 55, 'w', '2020-05-10', '2020-05-11', "대한민국");
+VALUES(1515, '라00', '경상북도', '영주시', 55, 'w', '2020-05-18', '2020-05-18', "대한민국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(1616, '지00', '전라남도', '여수시', 39, 'm', '2020-05-10', '2020-05-11', "영국");
+VALUES(1616, '지00', '전라남도', '여수시', 39, 'm', '2020-05-19', '2020-05-19', "영국");
 INSERT person(ssn, name, address1, address2, age, gender, test_condition, isolation, country) 
-VALUES(1717, '하00', '전라북도', '전주시', 41, 'w', '2020-05-10', '2020-05-11', "대한민국");
+VALUES(1717, '하00', '전라북도', '전주시', 41, 'w', '2020-05-19', '2020-05-20', "대한민국");
 
 -- Hospital 엔터티 추가
 INSERT hospital(code, name) VALUES(101, '신촌세브란스');
