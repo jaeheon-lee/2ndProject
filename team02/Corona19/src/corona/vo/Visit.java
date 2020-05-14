@@ -8,7 +8,10 @@ public class Visit extends Place{
 	public Visit() {
 		
 	}
-	
+	public Visit(String cleanDate) {
+		this(null, null, 0, null, cleanDate);
+		
+	}
 	public Visit(String address, String name, int ssn, String visitDate, String cleanDate) {
 		super(address, name);
 		this.ssn = ssn;

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import config.ServerInfo;
+import corona.exception.DuplicateSSNException;
 import corona.vo.Hospital;
 import corona.vo.Infectee;
 import corona.vo.Person;
@@ -233,27 +234,66 @@ public class Database implements DatabaseTemplate {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
+		ArrayList<Visit> v = new ArrayList<Visit>();
 		
 		try {
 		conn = getConnect();
-		String query = "SELECT ";
-		return null;
-		}catch(SQLException e) {
-			System.out.println();
+		String query = "SELECT cleanDate From visits WHERE address = ?";
+		ps = conn.prepareStatement(query);
+		
+		ps.setString(1, address);
+		rs = ps.executeQuery();
+		
+		while(rs.next()) {
+			v.add(new Visit(rs.getString("cleanDate")));
 		}
-		return null;
+		}catch(SQLException e) {
+			
+		}finally{
+			closeAll(rs, ps, conn);
+		}
+		return v;
 	}
 
 	@Override
 	public void updatePerson(Person p) {
-		// TODO Auto-generated method stub
+		
 		
 	}
+	
+	public boolean isExistinInfectee(int ssn, Connection conn)throws SQLException {
+		//있는지 없는지 존재유무 확인...
+		
+		String sql ="SELECT Person_ssn FROM infectee WHERE Person_ssn=?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		ps.setInt(1,ssn);
+		ResultSet rs = ps.executeQuery();
+		return rs.next();
+	}	
 
 	@Override
-	public void addInfectee(Infectee inf) {
-		// TODO Auto-generated method stub
+	public void addInfectee(int ssn, int code) throws SQLException, DuplicateSSNException {
+		Connection conn = null;
+		PreparedStatement ps =null;
 		
+		try {
+			conn = getConnect();
+			
+			if(!isExistinInfectee(ssn, conn)) {
+				String query = "INSERT INTO infectee(Person_ssn, in_hospital, Hospital_code) VALUES(?, curdate(), ?)";
+				ps = conn.prepareStatement(query);
+				
+				ps.setInt(1, ssn);
+				ps.setInt(2, code);
+				
+				System.out.println(ps.executeUpdate()+" 명 추가 ok...");
+			}else {
+				throw new DuplicateSSNException("이미 확진자 명단에 있습니다.");
+			}
+		}finally {
+			closeAll(ps, conn);
+		}
 	}
 
 	@Override

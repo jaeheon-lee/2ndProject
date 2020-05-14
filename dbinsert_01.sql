@@ -1,10 +1,5 @@
-INSERT hospital(code, name) VALUES(101, '신촌세브란스');
-INSERT hospital(code, name) VALUES(102, '서울대학병원');
-INSERT hospital(code, name) VALUES(201, '가천길병원');
-INSERT hospital(code, name) VALUES(301, '충북백병원');
-INSERT hospital(code, name) VALUES(401, '충남병원');
-INSERT hospital(code, name) VALUES(603, '전북병원');
-INSERT hospital(code, name) VALUES(703, '전북병원');
-INSERT hospital(code, name) VALUES(801, '경북병원');
-INSERT hospital(code, name) VALUES(901, '경남병원');
-INSERT hospital(code, name) VALUES(891, '대구병원');
+select * from infectee;
+
+delete from infectee;
+
+INSERT INTO infectee(Person_ssn, in_hospital, Hospital_code) VALUES(111, curdate(), 101);
