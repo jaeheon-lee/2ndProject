@@ -72,9 +72,9 @@ public interface DatabaseTemplate {
 	Person searchAInfectee(String address1, String address2, int num);
 	Person searchAInfectee(int ssn);//
 	// 전체확진자
-	ArrayList<Person> searchAllInfectee();
+	ArrayList<Infectee> searchAllInfectee();
 	// 해외발생확진자 where country = ?
-	ArrayList<Person> searchAllForeignInfectee();
+	ArrayList<Infectee> searchAllForeignInfectee();
 	// 동선 조회
 	ArrayList<Place> searchAllTrace(int ssn);
 	
@@ -82,12 +82,12 @@ public interface DatabaseTemplate {
 	int searchAHosipitalCode(String name);
 	// 병원 별 확진자 조회
 	Hospital whereIsAInfectee(Infectee infectee); // 특정 환자가 입원한 병원
-    ArrayList<Person> searchAllInfecteeInHospital(); // 한 병원의 모든 환자
+    ArrayList<Infectee> searchAllInfecteeInHospital(); // 한 병원의 모든 환자
     // n번 환자가 감염시킨 사람들을 조회
-    ArrayList<Person> searchInfectedPeopleByCertainPerson(Person p);
+    ArrayList<Infectee> searchInfectedPeopleByCertainPerson(Person p);
     
     // 방역여부 조회
-    ArrayList<Visit> isCleaned(String address); // 특정 확진자가 간 곳 
+    ArrayList<Visit> isCleaned(String address) throws SQLException; // 특정 확진자가 간 곳 
     
 	// =============== 현황업데이트 =================
     // 일반정보수정
@@ -108,4 +108,6 @@ public interface DatabaseTemplate {
     
     // ssn 변환
     int returnSsn(String address1, String address2, int num);
+    // 동선 모음 불러오기
+    ArrayList<Visit> getTrace(int ssn);
 }

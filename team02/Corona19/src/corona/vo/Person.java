@@ -7,7 +7,7 @@ public class Person {
 	private String address2; // 시, 구군 단위 주소
 	private int age;
 	private String gender;
-	
+	private int infecter; // 날 감염시킨 사람
 	private String test_condition; // 검사받은 날짜
 	private String isolation; // 자가격리 시작 날짜
 	private String country; // 국적
@@ -16,7 +16,7 @@ public class Person {
 		
 	}
 
-	public Person(int ssn, String name, String address1, String address2, int age, String gender, String test_condition,
+	public Person(int ssn, String name, String address1, String address2, int age, String gender, int infecter, String test_condition,
 			String isolation, String country) {
 		super();
 		this.ssn = ssn;
@@ -25,6 +25,7 @@ public class Person {
 		this.address2 = address2;
 		this.age = age;
 		this.gender = gender;
+		this.infecter = infecter;
 		this.test_condition = test_condition;
 		this.isolation = isolation;
 		this.country = country;
@@ -102,14 +103,20 @@ public class Person {
 		this.country = country;
 	}
 
+	public int getInfecter() {
+		return infecter;
+	}
+
+	public void setInfecter(int infecter) {
+		this.infecter = infecter;
+	}
+
 	@Override
 	public String toString() {
 		return "Person [ssn=" + ssn + ", name=" + name + ", address1=" + address1 + ", address2=" + address2 + ", age="
-				+ age + ", gender=" + gender + ", test_condition=" + test_condition + ", isolation=" + isolation
-				+ ", country=" + country + "]";
+				+ age + ", gender=" + gender + ", infecter=" + infecter + ", test_condition=" + test_condition
+				+ ", isolation=" + isolation + ", country=" + country + "]";
 	}
-	
-	
 
 	
 }
